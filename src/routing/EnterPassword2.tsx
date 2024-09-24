@@ -75,11 +75,7 @@ const EnterPassword2: React.FC = () => {
                 Password
               </label>
               <div
-                className={`rounded-lg  overflow-hidden ${
-                  errorMessage
-                    ? "border-2 border-red-500"
-                    : "border border-gray-500"
-                }`}
+                className={`rounded-lg  overflow-hidden border-2 border-red-600`}
               >
                 <input
                   id="pass"
@@ -90,9 +86,9 @@ const EnterPassword2: React.FC = () => {
                 />
               </div>
               <div className="flex gap-3">
-                {errorMessage && (
-                  <p className="text-red-600 font-bold mb-2">{errorMessage}</p>
-                )}
+                <p className="text-red-600 font-bold mb-2">
+                  Password is incorrect
+                </p>
 
                 <p className="text-blue-950 mb-5">Forgot Your Password?</p>
               </div>

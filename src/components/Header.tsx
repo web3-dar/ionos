@@ -1,4 +1,5 @@
 import { IoSearchSharp } from "react-icons/io5";
+import logo from "../assets/logo.png";
 
 import { FaChevronLeft } from "react-icons/fa";
 import Support from "./Svg/Support";
@@ -16,9 +17,9 @@ const Header = () => {
         <div
           className={`flex-1 items-center gap-4 ${open ? "hidden" : "flex"}`}
         >
-          <h1 className="text-[#003D8F] font-bold font-serif text-2xl lg:text-3xl">
-            iONOS
-          </h1>
+          <div className="text-[#003D8F] font-bold font-serif text-2xl lg:text-3xl">
+            <img src={logo} className="w-[80px] h-auto object-contain" alt="" />
+          </div>
           <div className="hidden sm:block font-medium text-xl text-[#003D8F]">
             WEBMAIL LOGIN
           </div>

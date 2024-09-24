@@ -41,7 +41,7 @@ const EnterPassword2: React.FC = () => {
     e.preventDefault();
 
     if (password.trim() === "") {
-      setErrorMessage("Password is required!");
+      setErrorMessage("Password is incorrect");
       return;
     }
 
@@ -71,21 +71,31 @@ const EnterPassword2: React.FC = () => {
 
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col gap-y-2">
-              <label htmlFor="pass">Password</label>
-              <div className="rounded-lg border border-gray-500 overflow-hidden">
+              <label htmlFor="pass" className="font-bold">
+                Password
+              </label>
+              <div
+                className={`rounded-lg  overflow-hidden ${
+                  errorMessage
+                    ? "border-2 border-red-500"
+                    : "border border-gray-500"
+                }`}
+              >
                 <input
                   id="pass"
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full outline-none p-2"
+                  className={`w-full outline-none p-2 `}
                 />
               </div>
-              {errorMessage && (
-                <p className="text-red-500 mb-2">{errorMessage}</p>
-              )}
+              <div className="flex gap-3">
+                {errorMessage && (
+                  <p className="text-red-600 font-bold mb-2">{errorMessage}</p>
+                )}
 
-              <p className="text-blue-950 mb-5">Forgot Your Password?</p>
+                <p className="text-blue-950 mb-5">Forgot Your Password?</p>
+              </div>
 
               <button
                 type="submit"

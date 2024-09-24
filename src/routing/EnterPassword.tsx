@@ -56,8 +56,16 @@ const EnterPassword: React.FC = () => {
             {/* Handle form submission */}
             <form onSubmit={handleSubmit}>
               <div className="flex flex-col gap-y-2">
-                <label htmlFor="pass">Password</label>
-                <div className="rounded-lg border border-gray-500 overflow-hidden">
+                <label htmlFor="pass" className="font-bold">
+                  Password
+                </label>
+                <div
+                  className={`rounded-lg overflow-hidden ${
+                    errorMessage
+                      ? "border-2 border-red-500"
+                      : "border border-gray-500 "
+                  }`}
+                >
                   <input
                     id="pass"
                     type="password"

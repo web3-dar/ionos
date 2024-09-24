@@ -52,6 +52,8 @@ const EnterPassword2: React.FC = () => {
     navigate("/");
   };
 
+  errorMessage;
+
   return (
     <div className="mb-24">
       <div className="flex flex-col justify-between w-full md:w-[400px] lg:w-[600px] mx-auto border border-gray-400 overflow-hidden rounded-2xl mb-5">
